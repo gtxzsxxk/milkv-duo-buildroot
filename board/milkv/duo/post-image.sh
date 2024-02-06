@@ -8,7 +8,7 @@
 #              then pack everything to an image file.
 ###########################################################
 
-FIPTOOL_OPTS = genfip ${BINARIES_DIR}/fip.bin \
+FIPTOOL_OPTS="genfip ${BINARIES_DIR}/fip.bin \
 	--MONITOR_RUNADDR=0x80000000 \
 	--CHIP_CONF=${BINARIES_DIR}/chip_conf.bin \
 	--NOR_INFO=FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF \
@@ -18,12 +18,13 @@ FIPTOOL_OPTS = genfip ${BINARIES_DIR}/fip.bin \
 	--BLCP_PARAM_LOADADDR=0 \
 	--DDR_PARAM=${BINARIES_DIR}/ddr_param.bin \
 	--MONITOR=${BINARIES_DIR}/fw_dynamic.bin \
-	--LOADER_2ND=${BINARIES_DIR}/u-boot.bin
+	--LOADER_2ND=${BINARIES_DIR}/u-boot.bin"
 
 if [ -f ${BINARIES_DIR}/cvirtos.bin ]; then
-	FIPTOOL_OPTS += --BLCP=${BINARIES_DIR}/empty.bin \
+	FIPTOOL_OPTS="${FIPTOOL_OPTS} \
+		--BLCP=${BINARIES_DIR}/empty.bin \
 		--BLCP_2ND=${BINARIES_DIR}/cvirtos.bin \
-		--BLCP_2ND_RUNADDR=0x83f40000
+		--BLCP_2ND_RUNADDR=0x83f40000"
 	echo "[Duo Post-Image fiptool.py] Integrating FreeRTOS"
 fi
 
