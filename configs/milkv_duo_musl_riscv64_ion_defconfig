@@ -8,7 +8,6 @@ BR2_KERNEL_HEADERS_5_10=y
 
 # Using gcc13 and musl to have t-head's optimization and features
 BR2_GCC_VERSION_13_X=y
-BR2_TOOLCHAIN_BUILDROOT_CXX=y
 BR2_TOOLCHAIN_BUILDROOT_MUSL=y
 BR2_TARGET_OPTIMIZATION="-march=rv64imafdc_xtheadba_xtheadbb_xtheadbs_xtheadcmo_xtheadcondmov_xtheadfmemidx_xtheadfmv_xtheadint_xtheadmac_xtheadmemidx_xtheadmempair_xtheadsync"
 
@@ -38,6 +37,7 @@ BR2_LINUX_KERNEL_CUSTOM_REPO_URL="https://github.com/milkv-duo/milkv-duo-linux.g
 BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION="duo-linux-5.10.4"
 BR2_LINUX_KERNEL_DEFCONFIG="cvitek_cv1800b_milkv_duo_sd"
 BR2_LINUX_KERNEL_LZMA=y
+BR2_LINUX_KERNEL_NEEDS_HOST_OPENSSL=y
 
 # SD card image generating script
 BR2_ROOTFS_POST_IMAGE_SCRIPT="board/milkv/duo/post-image.sh"
