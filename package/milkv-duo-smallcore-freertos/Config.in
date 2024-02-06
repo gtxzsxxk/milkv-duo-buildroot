@@ -18,4 +18,4 @@ config BR2_PACKAGE_MILKV_DUO_SMALLCORE_FREERTOS
 	  automatically compile and include the FreeRTOS into the
 	  fip.bin, which will then be packed into sdcard.img
 
-	  https://github.com/gtxzsxxk/milkv-duo-smallcore-freertos
+	  https://github.com/milkv-duo/milkv-duo-smallcore-freertos

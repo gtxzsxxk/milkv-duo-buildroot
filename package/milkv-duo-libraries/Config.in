@@ -2,8 +2,10 @@ config BR2_PACKAGE_MILKV_DUO_LIBRARIES
 	bool "milk-v duo libraries"
 	depends on BR2_riscv
 	help
-	  Those packages provide board-specific hardware tools and
-	  firmware for the Milk-V Duo platform.
+	  Those packages provide board-specific firmware and
+	  hardware tools for the Milk-V Duo platform.
+
+	  https://github.com/milkv-duo/milkv-duo-buildroot-libraries
 
 if BR2_PACKAGE_MILKV_DUO_LIBRARIES
 
@@ -14,14 +16,12 @@ config BR2_PACKAGE_MILKV_DUO_FIRMWARE_FSBL
 	  This package is obtained from
 	  https://github.com/milkv-duo/duo-buildroot-sdk,
 	  from which we download the first stage bootloader source and
-	  compile it, generating the atf bl2.bin. At the mean time, we
+	  compile it, generating the ATF bl2.bin. At the mean time, we
 	  will use the fiptool.py in this package to create the binary
 	  file fip.bin to pack the opensbi, u-boot and so on.
 
-	  If you are using Buildroot to generate the whole SD card
-	  Image or the fip.bin, you must say Y to this package!
-
-	  https://github.com/gtxzsxxk/milkv-duo-firmware-fsbl
+	  If you intend to generate the whole sdcard image or the
+	  fip.bin for milk-v duo, you must say Y to this package!
 
 config BR2_PACKAGE_MILKV_DUO_FIRMWARE_FSBL_64MB
 	bool "64 MiB free ram"
@@ -39,8 +39,6 @@ config BR2_PACKAGE_MILKV_DUO_PINMUX
 	  get or set function of any Milk-V Duo GPIO Pin. More info at
 
 	  https://milkv.io/docs/duo/application-development/pinmux
-
-	  https://github.com/shodan8192/milkv-duo-pinmux
 
 config BR2_PACKAGE_MILKV_DUO_FEATURES
 	bool "duo usb features"
