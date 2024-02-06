@@ -18,9 +18,14 @@ Configure Buildroot:
 
 The milkv_duo_musl_riscv64_defconfig will by default provide
 the full 64MiB free RAM. If you want to build with memory
-reserved for ION, please try:
+reserved for ION (generalized memory manager in linux, i.e.
+some memory will be reserved for the camera algorithms), please try:
 
     $ make milkv_duo_musl_riscv64_ion_defconfig
+
+For more information about the ION, please refer to
+
+https://github.com/milkv-duo/duo-buildroot-sdk/blob/develop/README.md?plain=1#L436
 
 Modify configuration if needed, e.g. add more packages to target:
 
