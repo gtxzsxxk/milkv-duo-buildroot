@@ -28,7 +28,7 @@ if [ -f ${BINARIES_DIR}/cvirtos.bin ]; then
 	echo "[Duo Post-Image fiptool.py] Integrating FreeRTOS"
 fi
 
-${BINARIES_DIR}/fiptool.py ${FIPTOOL_OPTS}\
+${BINARIES_DIR}/fiptool.py ${FIPTOOL_OPTS} \
 > ${BINARIES_DIR}/fip.log 2>&1
 if [ -f ${BINARIES_DIR}/fip.bin ]; then
 	echo "[Duo Post-Image fiptool.py] > fip.bin generated!"
