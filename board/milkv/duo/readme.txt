@@ -35,14 +35,6 @@ Compile everything and build the SD card image:
 
     $ make
 
-To configure the linux kernel or u-boot:
-
-    $ make linux-menuconfig
-
-To rebuild something (e.g. linux):
-
-    $ make linux-rebuild
-
 How to write the SD card
 ========================
 

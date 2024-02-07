@@ -6,7 +6,11 @@ BR2_RISCV_ISA_RVC=y
 # Linux headers same as kernel 5.10 series
 BR2_KERNEL_HEADERS_5_10=y
 
-# Using gcc13 and musl to have t-head's optimization and features
+# Since gcc 13 and later versions with the t-head's optimizations
+# below are currently not well compatible with glibc, which will
+# throw gcc ICE (Internal Compiler Error) when the buildroot is
+# compiling the glibc, so we choose musl used by the official sdk
+# until this ICE gets fixed.
 BR2_GCC_VERSION_13_X=y
 BR2_TOOLCHAIN_BUILDROOT_MUSL=y
 BR2_TARGET_OPTIMIZATION="-march=rv64imafdc_xtheadba_xtheadbb_xtheadbs_xtheadcmo_xtheadcondmov_xtheadfmemidx_xtheadfmv_xtheadint_xtheadmac_xtheadmemidx_xtheadmempair_xtheadsync"

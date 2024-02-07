@@ -2,8 +2,8 @@ config BR2_PACKAGE_MILKV_DUO_LIBRARIES
 	bool "milk-v duo libraries"
 	depends on BR2_riscv
 	help
-	  Those packages provide board-specific firmware and
-	  hardware tools for the Milk-V Duo platform.
+	  Package providing board-specific firmware and hardware tools
+	  for Milk-V Duo platform.
 
 	  https://github.com/milkv-duo/milkv-duo-buildroot-libraries
 
@@ -28,8 +28,8 @@ config BR2_PACKAGE_MILKV_DUO_FIRMWARE_FSBL_64MB
 	default n
 	depends on BR2_PACKAGE_MILKV_DUO_FIRMWARE_FSBL
 	help
-	  Say Y to this will disable the ION in order to
-	  have the all 64MiB Free memory.
+	  Say Y to this will disable the ION (Camera Algorithm Memory)
+	  in order to have the all 64MiB Free memory.
 
 config BR2_PACKAGE_MILKV_DUO_PINMUX
 	bool "duo-pinmux tool"
